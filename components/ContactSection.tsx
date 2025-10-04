@@ -14,8 +14,26 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+
+    // Create email body with form data
+    const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}
+    `.trim();
+
+    // Create mailto link
+    const subject = encodeURIComponent(
+      "Contact Form Submission - Hermitage Hotels"
+    );
+    const body = encodeURIComponent(emailBody);
+    const mailtoLink = `mailto:thehermitagesrinagar@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open email client
+    window.location.href = mailtoLink;
   };
 
   const handleChange = (
@@ -41,7 +59,7 @@ export default function ContactSection() {
             {/* Google Map */}
             <div className='mb-8 rounded-xl overflow-hidden shadow-2xl'>
               <iframe
-                src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13225.864964758259!2d75.3225794!3d34.0319094!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e23f137d974869%3A0xf216fecd19e32f5a!2sThe%20Hermitage%20By%20Grand%20Resorts!5e0!3m2!1sen!2sin!4v1723542419473!5m2!1sen!2sin'
+                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.5157068!2d74.799026!3d34.0771574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18ff1066153af%3A0xb23025063b4e42e3!2sPolice%20Station%20-%20Batamaloo!5e0!3m2!1sen!2sin!4v1735842000000!5m2!1sen!2sin'
                 width='100%'
                 height='300'
                 style={{ border: 0 }}
@@ -65,7 +83,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className='text-white font-semibold mb-1'>Address:</h4>
                   <p className='text-gray-300'>
-                    Laripora Pahalgam, Pahalgam, Jammu and Kashmir 192126
+                    Balgarden, Batamaloo Srinagar 190010
                   </p>
                 </div>
               </motion.div>
@@ -80,7 +98,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className='text-white font-semibold mb-1'>Phone:</h4>
-                  <p className='text-gray-300'>+91 6006750238, 6006750237</p>
+                  <p className='text-gray-300'>+91 88994 00283</p>
                 </div>
               </motion.div>
 
@@ -113,7 +131,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className='text-white font-semibold mb-1'>Email:</h4>
                   <p className='text-gray-300'>
-                    reservations@hermitagehotels.in
+                    thehermitagesrinagar@gmail.com
                   </p>
                 </div>
               </motion.div>

@@ -1,51 +1,34 @@
 import Link from "next/link";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Instagram, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const quickLinks = [
-    { name: "Virtual Tour", href: "/virtual-tour" },
-    { name: "Video Tour", href: "/video-tour" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Pay Direct", href: "/pay-direct" },
-    { name: "Direct Booking", href: "/rooms" },
-  ];
-
-  const aboutLinks = [
-    { name: "About Us", href: "/about" },
-    { name: "Privacy Policy", href: "/privacy-policy" },
-    {
-      name: "Trip Advisor",
-      href: "https://www.tripadvisor.in/Hotel_Review-g665884-d17729599-Reviews-Hermitage-Pahalgam_Anantnag_District_Kashmir_Jammu_and_Kashmir.html",
-    },
-    {
-      name: "Location",
-      href: "https://www.google.com/maps/place/The+Hermitage+By+Grand+Resorts",
-    },
-    { name: "Contact Us", href: "/contact" },
-  ];
-
   const socialLinks = [
-    { name: "Facebook", href: "#", icon: Facebook },
-    { name: "Twitter", href: "#", icon: Twitter },
-    { name: "Instagram", href: "#", icon: Instagram },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/hermitage_srinagar/",
+      icon: Instagram,
+    },
+    {
+      name: "WhatsApp",
+      href: "https://wa.me/918899400283",
+      icon: MessageCircle,
+    },
     {
       name: "Email",
-      href: "mailto:reservations@hermitagehotels.in",
+      href: "mailto:thehermitagesrinagar@gmail.com",
       icon: Mail,
+    },
+    {
+      name: "Phone",
+      href: "tel:+918899400283",
+      icon: Phone,
     },
   ];
 
   const mapHref =
-    "https://www.google.com/maps/place/The+Hermitage+By+Grand+Resorts";
+    "https://www.google.com/maps/place/Police+Station+-+Batamaloo/@34.0771574,74.799026,56m/data=!3m1!1e3!4m6!3m5!1s0x38e18ff1066153af:0xb23025063b4e42e3!8m2!3d34.077256!4d74.7957152!16s%2Fg%2F124ss91r_?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D";
 
   return (
     <footer className='bg-gray-900 text-white'>

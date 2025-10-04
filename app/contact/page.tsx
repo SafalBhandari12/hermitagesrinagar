@@ -10,23 +10,19 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: [
-      "Laripora Pahalgam",
-      "Pahalgam, Jammu and Kashmir 192126",
-      "India",
-    ],
+    details: ["Balgarden", "Batamaloo Srinagar 190010", "India"],
     color: "text-blue-600",
   },
   {
     icon: Phone,
     title: "Phone",
-    details: ["+91 6006750238", "+91 6006750237", "+91 01936243044"],
+    details: ["+918899400283"],
     color: "text-green-600",
   },
   {
     icon: Mail,
     title: "Email",
-    details: ["reservations@hermitagehotels.in", "info@hermitagehotels.in"],
+    details: ["thehermitagesrinagar@gmail.com"],
     color: "text-purple-600",
   },
   {
