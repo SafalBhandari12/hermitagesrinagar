@@ -20,9 +20,14 @@ body {
   overflow-x: hidden;
 }
 
+/* Remove top padding; let content sit directly beneath the fixed navbar */
+main {
+  padding-top: 0;
+}
+
 /* Offset for fixed header when using hash links */
 section {
-  scroll-margin-top: 8rem;
+  scroll-margin-top: 6rem; /* slightly more than navbar height */
 }
 
 /* Custom scrollbar */
@@ -43,7 +48,14 @@ section {
   background: #555;
 }
 
-/* Smooth scroll */
+/* Smooth scroll with better performance */
 html {
   scroll-behavior: smooth;
+}
+
+/* Optimize images and backgrounds */
+img,
+[style*="background-image"] {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }

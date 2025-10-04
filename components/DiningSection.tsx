@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Utensils, Coffee } from "lucide-react";
+import Image from "next/image";
 
 const diningImages = [
   "/food/RCS00126.JPG",
@@ -17,41 +18,54 @@ export default function DiningSection() {
     <section id='dining' className='py-20 bg-white'>
       <div className='container mx-auto px-4'>
         <motion.div
-          className='text-center mb-16'
-          initial={{ opacity: 0, y: 30 }}
+          className='text-center mb-12 lg:mb-16'
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className='text-4xl md:text-5xl font-serif text-gray-900 mb-4'>
+          <h2 className='text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 mb-4'>
             Dining at Hermitage
           </h2>
-          <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+          <p className='text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4'>
             Savor curated Kashmiri flavors and global cuisines in elegant, cozy
             settings.
           </p>
         </motion.div>
 
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6'>
           {diningImages.map((src, idx) => (
             <motion.div
               key={src}
-              className='group rounded-xl overflow-hidden shadow-lg bg-gray-50'
-              initial={{ opacity: 0, y: 30 }}
+              className='group rounded-xl overflow-hidden shadow-lg bg-gray-50 will-change-transform'
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: idx * 0.05 }}
-              viewport={{ once: true }}
+              transition={{
+                duration: 0.4,
+                delay: Math.min(idx * 0.1, 0.3),
+                ease: "easeOut",
+              }}
+              viewport={{ once: true, margin: "-50px" }}
             >
-              <div
-                className='h-56 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700'
-                style={{ backgroundImage: `url(${src})` }}
-              />
-              <div className='p-4 flex items-center justify-between'>
+              <div className='relative h-48 lg:h-56 overflow-hidden bg-gray-100'>
+                <Image
+                  src={src}
+                  alt={`Dining at Hermitage - Image ${idx + 1}`}
+                  fill
+                  className='object-cover transform transition-transform duration-500 group-hover:scale-105'
+                  sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
+                  loading={idx < 3 ? "eager" : "lazy"}
+                  quality={80}
+                />
+              </div>
+              <div className='p-3 lg:p-4 flex items-center justify-between'>
                 <div className='flex items-center space-x-2 text-gray-700'>
-                  <Utensils className='w-5 h-5 text-yellow-500' />
-                  <span className='font-medium'>Signature Dish</span>
+                  <Utensils className='w-4 h-4 lg:w-5 lg:h-5 text-yellow-500' />
+                  <span className='font-medium text-sm lg:text-base'>
+                    Signature Dish
+                  </span>
                 </div>
-                <Coffee className='w-5 h-5 text-gray-400' />
+                <Coffee className='w-4 h-4 lg:w-5 lg:h-5 text-gray-400' />
               </div>
             </motion.div>
           ))}

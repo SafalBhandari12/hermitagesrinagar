@@ -44,6 +44,9 @@ export default function Footer() {
     },
   ];
 
+  const mapHref =
+    "https://www.google.com/maps/place/The+Hermitage+By+Grand+Resorts";
+
   return (
     <footer className='bg-gray-900 text-white'>
       {/* Main Footer */}
@@ -70,6 +73,7 @@ export default function Footer() {
                     ? "noopener noreferrer"
                     : undefined
                 }
+                aria-label={social.name}
               >
                 <social.icon className='w-5 h-5 text-gray-300 group-hover:text-gray-900' />
               </Link>
@@ -78,128 +82,60 @@ export default function Footer() {
         </div>
 
         {/* Footer Content Grid */}
-        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
-          {/* Contact Info */}
-          <div>
-            <h3 className='text-xl font-semibold mb-6 text-yellow-500'>
-              Contact
-            </h3>
-            <div className='space-y-4'>
-              <div className='flex items-start space-x-3'>
-                <Phone className='w-5 h-5 text-yellow-500 mt-1 flex-shrink-0' />
+        <div className='max-w-6xl mx-auto px-4 lg:px-8'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 justify-items-center'>
+            {/* Contact Info */}
+            <div className='w-full max-w-md space-y-6 text-left'>
+              <h3 className='text-lg font-semibold text-yellow-500 mb-6'>
+                Contact Information
+              </h3>
+              <div className='space-y-5'>
                 <div>
-                  <p className='font-medium'>+91 01936243044</p>
-                  <p className='text-sm text-gray-400'>24/7 Support</p>
+                  <p className='text-lg font-medium'>+91 01936243044</p>
+                  <p className='text-sm text-gray-400 mt-1'>
+                    24/7 Support Available
+                  </p>
                 </div>
-              </div>
-
-              <div className='flex items-start space-x-3'>
-                <MapPin className='w-5 h-5 text-yellow-500 mt-1 flex-shrink-0' />
                 <div>
-                  <p className='text-sm'>Main Market, Laripora Pahalgam</p>
-                  <p className='text-sm text-gray-400'>J & K, India</p>
+                  <p className='font-medium'>Main Market, Laripora Pahalgam</p>
+                  <p className='text-sm text-gray-400 mt-1'>
+                    Jammu & Kashmir, India
+                  </p>
                 </div>
-              </div>
-
-              <div className='flex items-start space-x-3'>
-                <Mail className='w-5 h-5 text-yellow-500 mt-1 flex-shrink-0' />
                 <div>
-                  <Link
-                    href='mailto:reservations@hermitagehotels.in'
-                    className='text-sm hover:text-yellow-500 transition-colors'
-                  >
-                    reservations@hermitagehotels.in
-                  </Link>
+                  <p className='font-medium'>reservations@hermitagehotels.in</p>
+                  <p className='text-sm text-gray-400 mt-1'>
+                    For reservations & inquiries
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Brand Logos */}
-            <div className='mt-8 flex items-center space-x-4'>
-              <div className='w-16 h-12 bg-gray-800 rounded flex items-center justify-center'>
-                <span className='text-xs text-gray-400'>Brand 1</span>
-              </div>
-              <div className='w-16 h-12 bg-gray-800 rounded flex items-center justify-center'>
-                <span className='text-xs text-gray-400'>Brand 2</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Overview Links */}
-          <div>
-            <h3 className='text-xl font-semibold mb-6 text-yellow-500'>
-              Overview
-            </h3>
-            <ul className='space-y-3'>
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className='text-gray-300 hover:text-yellow-500 transition-colors text-sm'
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* About Links */}
-          <div>
-            <h3 className='text-xl font-semibold mb-6 text-yellow-500'>
-              About
-            </h3>
-            <ul className='space-y-3'>
-              {aboutLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className='text-gray-300 hover:text-yellow-500 transition-colors text-sm'
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={
-                      link.href.startsWith("http")
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h3 className='text-xl font-semibold mb-6 text-yellow-500'>
-              Newsletter
-            </h3>
-            <p className='text-sm text-gray-300 mb-4'>
-              Subscribe to Hermitage newsletter to get the latest tariff, for
-              B2B tour operators across India.
-            </p>
-
-            <form className='space-y-3'>
-              <input
-                type='email'
-                placeholder='Your email address'
-                className='w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all duration-300'
-              />
-              <button
-                type='submit'
-                className='w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-medium py-2 px-4 rounded-lg transition-all duration-300'
-              >
-                Subscribe
-              </button>
-            </form>
-
-            <div className='mt-6'>
-              <h4 className='text-sm font-semibold mb-3 text-yellow-500'>
-                We accept Online Payments
-              </h4>
-              <div className='w-32 h-8 bg-gray-800 rounded flex items-center justify-center'>
-                <span className='text-xs text-gray-400'>Payment Methods</span>
-              </div>
+            {/* Quick Links */}
+            <div className='w-full max-w-md space-y-6 text-left pl-12'>
+              <h3 className='text-lg font-semibold text-yellow-500 mb-6'>
+                Quick Links
+              </h3>
+              <ul className='space-y-4'>
+                {aboutLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className='text-gray-300 hover:text-yellow-500 transition-colors inline-block'
+                      target={
+                        link.href.startsWith("http") ? "_blank" : undefined
+                      }
+                      rel={
+                        link.href.startsWith("http")
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

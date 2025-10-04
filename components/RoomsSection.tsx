@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Users, Square, Tv, Car, Coffee, Wifi, Plane } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const rooms = [
   {
@@ -59,22 +60,22 @@ export default function RoomsSection() {
       <div className='container mx-auto px-4'>
         {/* Section Header */}
         <motion.div
-          className='text-center mb-16'
+          className='text-center mb-12 lg:mb-16'
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className='text-4xl md:text-5xl font-serif text-gray-900 mb-4'>
+          <h2 className='text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 mb-4'>
             Our Rooms
           </h2>
-          <p className='text-xl text-gray-600 max-w-2xl mx-auto'>
+          <p className='text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4'>
             The 4 star rooms & luxury suites at The Hermitage Pahalgam.
           </p>
         </motion.div>
 
         {/* Rooms Grid */}
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8'>
           {rooms.map((room, index) => (
             <motion.div
               key={room.id}
@@ -85,28 +86,35 @@ export default function RoomsSection() {
               viewport={{ once: true }}
             >
               {/* Room Image */}
-              <div className='relative h-64 overflow-hidden'>
-                <div
-                  className='absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110'
-                  style={{ backgroundImage: `url(${room.image})` }}
+              <div className='relative h-48 sm:h-56 lg:h-64 overflow-hidden bg-gray-100'>
+                <Image
+                  src={room.image}
+                  alt={`${room.title} - ${room.guests}`}
+                  fill
+                  className='object-cover transition-transform duration-500 group-hover:scale-105'
+                  sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
+                  loading={index < 2 ? "eager" : "lazy"}
+                  quality={80}
                 />
                 <div className='absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300' />
-                <div className='absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-full'>
-                  <span className='text-lg font-bold text-gray-900'>
+                <div className='absolute top-3 right-3 lg:top-4 lg:right-4 bg-white/90 backdrop-blur-sm px-2 py-1.5 lg:px-3 lg:py-2 rounded-full'>
+                  <span className='text-base lg:text-lg font-bold text-gray-900'>
                     {room.price}
                   </span>
-                  <span className='text-sm text-gray-600'>/night</span>
+                  <span className='text-xs lg:text-sm text-gray-600'>
+                    /night
+                  </span>
                 </div>
               </div>
 
               {/* Room Info */}
-              <div className='p-6'>
-                <h3 className='text-2xl font-serif text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors'>
+              <div className='p-4 lg:p-6'>
+                <h3 className='text-xl lg:text-2xl font-serif text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors'>
                   {room.title}
                 </h3>
 
                 {/* Room Details */}
-                <div className='flex items-center justify-between mb-4 text-sm text-gray-600'>
+                <div className='flex items-center justify-between mb-3 lg:mb-4 text-sm text-gray-600'>
                   <div className='flex items-center space-x-2'>
                     <Users className='w-4 h-4' />
                     <span>{room.guests}</span>
@@ -117,7 +125,7 @@ export default function RoomsSection() {
                   </div>
                 </div>
 
-                <p className='text-gray-600 mb-4 line-clamp-3'>
+                <p className='text-gray-600 mb-4 line-clamp-3 text-sm lg:text-base'>
                   {room.description}
                 </p>
 
@@ -129,7 +137,7 @@ export default function RoomsSection() {
                         key={amenityIndex}
                         className='group/amenity relative'
                       >
-                        <amenity.icon className='w-5 h-5 text-gray-400 hover:text-yellow-500 transition-colors cursor-help' />
+                        <amenity.icon className='w-4 h-4 lg:w-5 lg:h-5 text-gray-400 hover:text-yellow-500 transition-colors cursor-help' />
                         <div className='absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover/amenity:opacity-100 transition-opacity whitespace-nowrap'>
                           {amenity.name}
                         </div>
@@ -137,28 +145,6 @@ export default function RoomsSection() {
                     ))}
                   </div>
                 )}
-
-                <Link
-                  href={`/rooms/${room.title
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")}`}
-                  className='inline-flex items-center justify-center w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105'
-                >
-                  Book Now
-                  <svg
-                    className='w-4 h-4 ml-2'
-                    fill='none'
-                    stroke='currentColor'
-                    viewBox='0 0 24 24'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M9 5l7 7-7 7'
-                    />
-                  </svg>
-                </Link>
               </div>
             </motion.div>
           ))}
