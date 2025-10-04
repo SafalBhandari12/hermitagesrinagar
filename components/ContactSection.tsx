@@ -113,7 +113,7 @@ ${formData.message}
                 <div>
                   <h4 className='text-white font-semibold mb-1'>Timing:</h4>
                   <p className='text-gray-300'>
-                    Monday – Friday 09.00 – 6PM
+                    Monday – Saturday 9AM – 6PM
                     <br />
                     For Sales & reservations
                   </p>

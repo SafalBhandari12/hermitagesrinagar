@@ -20,7 +20,7 @@ import Link from "next/link";
 const roomsData = [
   {
     id: "cottage",
-    title: "Cottage Rooms",
+    title: "Rooms",
     price: "₹8,500",
     images: [
       "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
@@ -30,7 +30,7 @@ const roomsData = [
     guests: "2 GUESTS",
     size: "180 Ft²",
     description:
-      "Our well appointed Cottage Rooms are decorated to maximise space and comfort with beautiful valley views. Perfect for couples seeking a romantic getaway in the mountains.",
+      "Our well appointeds Rooms are decorated to maximise space and comfort with beautiful valley views. Perfect for couples seeking a romantic getaway in the mountains.",
     amenities: [
       { icon: Tv, name: "Flat-screen TV" },
       { icon: Wifi, name: "Free WiFi" },
@@ -50,7 +50,7 @@ const roomsData = [
   },
   {
     id: "premium",
-    title: "Premium Suite",
+    title: "Premium Room",
     price: "₹12,000",
     images: [
       "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",

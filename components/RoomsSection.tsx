@@ -8,17 +8,17 @@ import Image from "next/image";
 const rooms = [
   {
     id: 1,
-    title: "Cottage Rooms",
+    title: "Premium Deluxe",
     image: "/rooms/RCS00087.JPG",
     guests: "2 GUESTS",
     size: "180 Ft²",
     description:
-      "Our well appointed Premium Rooms are decorated to maximise space and comfort with beautiful valley views.",
+      "Our elegantly designed Premium Deluxe Rooms offer ample space, modern amenities, and stunning views of the surrounding valley.",
     amenities: [],
   },
   {
     id: 2,
-    title: "Premium Suite",
+    title: "Premium Rooms",
     image: "/rooms/RCS00092.JPG",
     guests: "2 GUESTS",
     size: "240 Ft²",
@@ -64,7 +64,7 @@ export default function RoomsSection() {
           viewport={{ once: true }}
         >
           <h2 className='text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 mb-4'>
-            Our Cottage Rooms
+            Our Rooms
           </h2>
           <p className='text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4'>
             The 4 star rooms & luxury suites at The Hermitage Srinagar.
