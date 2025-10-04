@@ -80,65 +80,6 @@ export default function Footer() {
             ))}
           </div>
         </div>
-
-        {/* Footer Content Grid */}
-        <div className='max-w-6xl mx-auto px-4 lg:px-8'>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 justify-items-center'>
-            {/* Contact Info */}
-            <div className='w-full max-w-md space-y-6 text-left'>
-              <h3 className='text-lg font-semibold text-yellow-500 mb-6'>
-                Contact Information
-              </h3>
-              <div className='space-y-5'>
-                <div>
-                  <p className='text-lg font-medium'>+91 01936243044</p>
-                  <p className='text-sm text-gray-400 mt-1'>
-                    24/7 Support Available
-                  </p>
-                </div>
-                <div>
-                  <p className='font-medium'>Main Market, Laripora Pahalgam</p>
-                  <p className='text-sm text-gray-400 mt-1'>
-                    Jammu & Kashmir, India
-                  </p>
-                </div>
-                <div>
-                  <p className='font-medium'>reservations@hermitagehotels.in</p>
-                  <p className='text-sm text-gray-400 mt-1'>
-                    For reservations & inquiries
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div className='w-full max-w-md space-y-6 text-left pl-12'>
-              <h3 className='text-lg font-semibold text-yellow-500 mb-6'>
-                Quick Links
-              </h3>
-              <ul className='space-y-4'>
-                {aboutLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className='text-gray-300 hover:text-yellow-500 transition-colors inline-block'
-                      target={
-                        link.href.startsWith("http") ? "_blank" : undefined
-                      }
-                      rel={
-                        link.href.startsWith("http")
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Footer Bottom */}

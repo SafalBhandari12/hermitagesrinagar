@@ -5,12 +5,12 @@ import { Utensils, Coffee } from "lucide-react";
 import Image from "next/image";
 
 const diningImages = [
-  "/food/RCS00126.JPG",
-  "/food/RCS00127.JPG",
-  "/food/RCS00128.JPG",
-  "/food/RCS00129.JPG",
-  "/food/RCS00130.JPG",
-  "/food/RCS00131.JPG",
+  { src: "/food/RCS00126.JPG", name: "Chicken Lollipops" },
+  { src: "/food/RCS00127.JPG", name: "Chicken Lollipops" },
+  { src: "/food/RCS00128.JPG", name: "Mixed Vegetable Stir-fry" },
+  { src: "/food/RCS00129.JPG", name: "Chilli Chicken (Dry)" },
+  { src: "/food/RCS00130.JPG", name: "Chicken Lollipops" },
+  { src: "/food/RCS00131.JPG", name: "Vegetable Fried Rice" },
 ];
 
 export default function DiningSection() {
@@ -34,9 +34,9 @@ export default function DiningSection() {
         </motion.div>
 
         <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6'>
-          {diningImages.map((src, idx) => (
+          {diningImages.map((item, idx) => (
             <motion.div
-              key={src}
+              key={item.src}
               className='group rounded-xl overflow-hidden shadow-lg bg-gray-50 will-change-transform'
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -49,8 +49,8 @@ export default function DiningSection() {
             >
               <div className='relative h-48 lg:h-56 overflow-hidden bg-gray-100'>
                 <Image
-                  src={src}
-                  alt={`Dining at Hermitage - Image ${idx + 1}`}
+                  src={item.src}
+                  alt={`${item.name} - Dining at Hermitage`}
                   fill
                   className='object-cover transform transition-transform duration-500 group-hover:scale-105'
                   sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
@@ -62,7 +62,7 @@ export default function DiningSection() {
                 <div className='flex items-center space-x-2 text-gray-700'>
                   <Utensils className='w-4 h-4 lg:w-5 lg:h-5 text-yellow-500' />
                   <span className='font-medium text-sm lg:text-base'>
-                    Signature Dish
+                    {item.name}
                   </span>
                 </div>
                 <Coffee className='w-4 h-4 lg:w-5 lg:h-5 text-gray-400' />
