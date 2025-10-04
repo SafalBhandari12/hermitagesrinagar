@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Phone, Menu, X, MapPin, Cloud, Bell } from "lucide-react";
+import { Phone, Menu, X, Cloud, Bell } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
@@ -17,21 +17,12 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
+  const navItems: { name: string; href: string }[] = [
     { name: "Home", href: "/" },
-    {
-      name: "Rooms & Suites",
-      href: "/rooms",
-      children: [
-        { name: "Deluxe Room", href: "/rooms/deluxe" },
-        { name: "Premium Suite", href: "/rooms/premium" },
-        { name: "Cottage Rooms", href: "/rooms/cottage" },
-      ],
-    },
-    { name: "Dining", href: "/dining" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Virtual Tour", href: "/virtual-tour" },
-    { name: "Contact", href: "/contact" },
+    { name: "Rooms & Suites", href: "#rooms" },
+    { name: "Dining", href: "#dining" },
+    { name: "Gallery", href: "#gallery" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -40,7 +31,7 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
             ? "bg-white/95 backdrop-blur-md shadow-lg"
-            : "bg-transparent"
+            : "bg-black/30 backdrop-blur-sm"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -80,25 +71,35 @@ export default function Header() {
               {/* Language Switcher */}
               <div className='hidden md:flex items-center space-x-2'>
                 <select
-                  className={`bg-transparent border-none text-sm cursor-pointer ${
-                    isScrolled ? "text-gray-600" : "text-white"
+                  className={`bg-transparent border border-white/30 rounded px-2 py-1 text-sm cursor-pointer focus:outline-none focus:border-yellow-400 ${
+                    isScrolled
+                      ? "text-gray-600 border-gray-300"
+                      : "text-white border-white/30"
                   }`}
                 >
-                  <option value='en'>EN</option>
-                  <option value='tr'>TR</option>
-                  <option value='fr'>FR</option>
-                  <option value='br'>BR</option>
+                  <option value='en' className='text-gray-900'>
+                    EN
+                  </option>
+                  <option value='tr' className='text-gray-900'>
+                    TR
+                  </option>
+                  <option value='fr' className='text-gray-900'>
+                    FR
+                  </option>
+                  <option value='br' className='text-gray-900'>
+                    BR
+                  </option>
                 </select>
               </div>
 
               {/* Check Rooms Button */}
-              <Link
-                href='/rooms'
+              <a
+                href='#rooms'
                 className='bg-yellow-500 hover:bg-yellow-600 text-gray-900 px-4 py-2 rounded-full flex items-center space-x-2 transition-all duration-300 hover:scale-105'
               >
                 <Bell className='w-4 h-4' />
                 <span className='text-sm font-medium'>Check Rooms</span>
-              </Link>
+              </a>
 
               {/* Mobile Menu Button */}
               <button
@@ -138,29 +139,15 @@ export default function Header() {
             {/* Desktop Navigation */}
             <nav className='hidden md:flex items-center space-x-8'>
               {navItems.map((item) => (
-                <div key={item.name} className='relative group'>
-                  <Link
-                    href={item.href}
-                    className={`text-sm font-medium hover:text-yellow-400 transition-colors ${
-                      isScrolled ? "text-gray-700" : "text-white"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                  {item.children && (
-                    <div className='absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 min-w-48'>
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.name}
-                          href={child.href}
-                          className='block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-50 hover:text-yellow-600'
-                        >
-                          {child.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`text-sm font-medium hover:text-yellow-400 transition-colors ${
+                    isScrolled ? "text-gray-700" : "text-white"
+                  }`}
+                >
+                  {item.name}
+                </Link>
               ))}
             </nav>
           </div>
@@ -173,32 +160,18 @@ export default function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className='md:hidden bg-white border-t border-gray-200'
+              className='md:hidden bg-white border-t border-gray-200 max-h-screen overflow-y-auto'
             >
-              <nav className='container mx-auto px-4 py-4'>
+              <nav className='container mx-auto px-4 py-4 max-h-96 overflow-y-auto'>
                 {navItems.map((item) => (
                   <div key={item.name} className='py-2'>
                     <Link
                       href={item.href}
-                      className='block text-gray-700 hover:text-yellow-600 font-medium'
+                      className='block text-gray-700 hover:text-yellow-600 font-medium py-2'
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
                     </Link>
-                    {item.children && (
-                      <div className='pl-4 mt-2 space-y-2'>
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.name}
-                            href={child.href}
-                            className='block text-sm text-gray-600 hover:text-yellow-600'
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {child.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
                   </div>
                 ))}
               </nav>

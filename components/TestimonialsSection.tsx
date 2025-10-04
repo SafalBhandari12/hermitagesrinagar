@@ -11,8 +11,6 @@ const testimonials = [
     rating: 5,
     comment:
       "Absolutely stunning location with breathtaking views! The service was exceptional and the rooms were luxurious. The staff went above and beyond to make our stay memorable.",
-    avatar:
-      "https://images.unsplash.com/photo-1494790108755-2616b612b043?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
   },
   {
     id: 2,
@@ -21,8 +19,6 @@ const testimonials = [
     rating: 5,
     comment:
       "A perfect getaway in Kashmir! The hotel provides world-class amenities and the mountain views are spectacular. Highly recommend for anyone visiting Pahalgam.",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMJA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
   },
   {
     id: 3,
@@ -31,8 +27,6 @@ const testimonials = [
     rating: 5,
     comment:
       "The Hermitage exceeded all our expectations. Beautiful property, excellent food, and the most welcoming staff. The location is perfect for exploring the natural beauty of Kashmir.",
-    avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMJA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
   },
 ];
 
@@ -62,7 +56,7 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
-              className='bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-500'
+              className='bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-500 border border-gray-100'
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -91,10 +85,12 @@ export default function TestimonialsSection() {
 
               {/* Author Info */}
               <div className='flex items-center'>
-                <div
-                  className='w-12 h-12 rounded-full bg-cover bg-center mr-4'
-                  style={{ backgroundImage: `url(${testimonial.avatar})` }}
-                />
+                <div className='w-12 h-12 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center mr-4 font-semibold'>
+                  {testimonial.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </div>
                 <div>
                   <h4 className='font-semibold text-gray-900'>
                     {testimonial.name}

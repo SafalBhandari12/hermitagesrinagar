@@ -9,8 +9,7 @@ const rooms = [
     id: 1,
     title: "Cottage Rooms",
     price: "₹8,500",
-    image:
-      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+    image: "/rooms/RCS00085.JPG",
     guests: "2 GUESTS",
     size: "180 Ft²",
     description:
@@ -21,8 +20,7 @@ const rooms = [
     id: 2,
     title: "Premium Suite",
     price: "₹12,000",
-    image:
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+    image: "/rooms/RCS00092.JPG",
     guests: "2 GUESTS",
     size: "240 Ft²",
     description:
@@ -38,8 +36,7 @@ const rooms = [
     id: 3,
     title: "Deluxe Room",
     price: "₹6,500",
-    image:
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    image: "/rooms/RCS00100.JPG",
     guests: "2 GUESTS",
     size: "180 Ft²",
     description:
@@ -55,7 +52,10 @@ const rooms = [
 
 export default function RoomsSection() {
   return (
-    <section className='py-20 bg-gradient-to-b from-gray-50 to-white'>
+    <section
+      id='rooms'
+      className='py-20 bg-gradient-to-b from-gray-50 to-white'
+    >
       <div className='container mx-auto px-4'>
         {/* Section Header */}
         <motion.div

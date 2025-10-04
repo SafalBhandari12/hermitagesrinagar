@@ -7,29 +7,25 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   {
     id: 1,
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    image: "/outdoor/RCS00117.JPG",
     title: "Hermitage a luxury experience",
     subtitle: "Exterior View",
   },
   {
     id: 2,
-    image:
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    image: "/rooms/RCS00085.JPG",
     title: "Luxury Suite Experience",
     subtitle: "Suite Room",
   },
   {
     id: 3,
-    image:
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    image: "/outdoor/RCS00120.JPG",
     title: "Comfort & Elegance",
     subtitle: "Room View",
   },
   {
     id: 4,
-    image:
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
+    image: "/outdoor/RCS00145.JPG",
     title: "Breathtaking Views",
     subtitle: "Balcony",
   },
@@ -47,7 +43,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <div className='relative h-screen overflow-hidden'>
+    <div className='relative h-screen overflow-hidden w-full'>
       {/* Slides */}
       {slides.map((slide, index) => (
         <motion.div
@@ -60,7 +56,7 @@ export default function HeroSlider() {
           transition={{ duration: 1 }}
         >
           <div
-            className='absolute inset-0 bg-cover bg-center bg-no-repeat'
+            className='absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full'
             style={{ backgroundImage: `url(${slide.image})` }}
           >
             <div className='absolute inset-0 bg-black/40' />
@@ -125,26 +121,23 @@ export default function HeroSlider() {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <button
-          onClick={() =>
-            window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-          }
-          className='p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300'
-        >
-          <svg
-            className='w-6 h-6 text-white'
-            fill='none'
-            stroke='currentColor'
-            viewBox='0 0 24 24'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={2}
-              d='M19 14l-7 7m0 0l-7-7m7 7V3'
-            />
-          </svg>
-        </button>
+        <a href='#rooms' className='block'>
+          <div className='p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300'>
+            <svg
+              className='w-6 h-6 text-white'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M19 14l-7 7m0 0l-7-7m7 7V3'
+              />
+            </svg>
+          </div>
+        </a>
       </motion.div>
     </div>
   );

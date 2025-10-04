@@ -15,53 +15,59 @@ import {
 const features = [
   {
     icon: Mountain,
-    title: "Breathtaking Views",
-    description: "Stunning mountain vistas and valley views from every room",
+    title: "Spectacular Valley Views",
+    description:
+      "Wake up to panoramic vistas of snow-capped peaks and pristine valleys from every room",
   },
   {
     icon: Wifi,
-    title: "Free WiFi",
-    description: "Complimentary high-speed internet throughout the property",
+    title: "High-Speed WiFi",
+    description:
+      "Stay connected with complimentary high-speed internet throughout the entire property",
   },
   {
     icon: Car,
-    title: "Free Parking",
-    description: "Ample parking space for all our guests",
+    title: "Complimentary Parking",
+    description:
+      "Secure, valet parking service available 24/7 for all our valued guests",
   },
   {
     icon: Coffee,
-    title: "Tea/Coffee Maker",
-    description: "In-room amenities for your comfort and convenience",
+    title: "Premium Amenities",
+    description:
+      "Luxury in-room facilities including premium tea/coffee maker and gourmet minibar",
   },
   {
     icon: Utensils,
-    title: "Fine Dining",
+    title: "Gourmet Dining",
     description:
-      "Exceptional culinary experiences with local and international cuisine",
+      "Award-winning restaurants serving authentic Kashmiri cuisine alongside international delicacies",
   },
   {
     icon: Shield,
-    title: "24/7 Security",
-    description: "Round-the-clock security for your peace of mind",
+    title: "Premium Security",
+    description:
+      "Round-the-clock security with CCTV monitoring ensuring complete peace of mind",
   },
   {
     icon: Camera,
-    title: "Photo Spots",
-    description: "Instagram-worthy locations throughout the property",
+    title: "Instagram Paradise",
+    description:
+      "Picture-perfect locations and curated photo experiences throughout our scenic property",
   },
   {
     icon: MapPin,
-    title: "Prime Location",
+    title: "Prime Pahalgam Location",
     description:
-      "Located in the heart of Pahalgam with easy access to attractions",
+      "Strategically located in Pahalgam's heart with easy access to major tourist attractions and adventure activities",
   },
 ];
 
 const stats = [
-  { number: "50+", label: "Luxury Rooms" },
-  { number: "4.8", label: "Guest Rating" },
-  { number: "24/7", label: "Room Service" },
-  { number: "100%", label: "Satisfaction" },
+  { number: "50+", label: "Luxury Rooms & Suites" },
+  { number: "4.9", label: "Guest Rating" },
+  { number: "24/7", label: "Concierge Service" },
+  { number: "100%", label: "Guest Satisfaction" },
 ];
 
 export default function FeaturesSection() {
@@ -77,12 +83,14 @@ export default function FeaturesSection() {
           viewport={{ once: true }}
         >
           <h2 className='text-4xl md:text-5xl font-serif text-gray-900 mb-4'>
-            Why Choose Hermitage
+            Why Choose Hermitage Hotels
           </h2>
-          <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-            Experience unparalleled luxury and comfort in the heart of Kashmir's
-            pristine beauty. Our world-class amenities and personalized service
-            ensure an unforgettable stay.
+          <p className='text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
+            Discover the perfect blend of luxury and nature at Hermitage Hotels,
+            where every moment becomes a treasured memory. Nestled in Kashmir's
+            breathtaking landscape, we offer world-class hospitality,
+            exceptional amenities, and personalized service that exceeds
+            expectations. Your extraordinary Kashmir experience begins here.
           </p>
         </motion.div>
 
@@ -140,13 +148,23 @@ export default function FeaturesSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <motion.button
-            className='bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-gray-900 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300'
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Book Your Stay Now
-          </motion.button>
+          <div className='bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-8 mb-8'>
+            <h3 className='text-2xl md:text-3xl font-serif text-gray-900 mb-4'>
+              Ready for Your Kashmir Adventure?
+            </h3>
+            <p className='text-gray-600 text-lg mb-6 max-w-2xl mx-auto'>
+              Join thousands of satisfied guests who have made Hermitage Hotels
+              their home away from home in paradise. Book now and experience the
+              magic of Kashmir like never before.
+            </p>
+            <motion.button
+              className='bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-gray-900 font-semibold px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-lg'
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Reserve Your Stay Today
+            </motion.button>
+          </div>
         </motion.div>
       </div>
     </section>
