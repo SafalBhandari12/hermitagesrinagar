@@ -57,9 +57,9 @@ const features = [
   },
   {
     icon: MapPin,
-    title: "Prime Pahalgam Location",
+    title: "Prime Srinagar Location",
     description:
-      "Strategically located in Pahalgam's heart with easy access to major tourist attractions and adventure activities",
+      "Strategically located in Srinagar's heart with easy access to major tourist attractions and adventure activities",
   },
 ];
 

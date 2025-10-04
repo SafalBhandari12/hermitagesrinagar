@@ -107,7 +107,7 @@ export default function AboutPage() {
                   Founded with a vision to showcase the unparalleled beauty of
                   Kashmir, Hermitage Hotels stands as a testament to luxury
                   hospitality in one of the world's most breathtaking
-                  destinations. Located in the pristine valley of Pahalgam, our
+                  destinations. Located in the pristine valley of Srinagar, our
                   resort offers guests an escape into nature's paradise.
                 </p>
                 <p>
@@ -277,7 +277,7 @@ export default function AboutPage() {
               </h2>
               <div className='space-y-6 text-gray-700 leading-relaxed'>
                 <p>
-                  Situated in the heart of Pahalgam, Kashmir, Hermitage Hotels
+                  Situated in the heart of Srinagar, Kashmir, Hermitage Hotels
                   offers the perfect base for exploring one of India's most
                   beautiful regions. Our location provides easy access to some
                   of Kashmir's most iconic attractions while maintaining the
@@ -293,7 +293,7 @@ export default function AboutPage() {
                   <div className='text-sm text-gray-600'>
                     <strong>Main Market, Laripora</strong>
                     <br />
-                    Pahalgam, Jammu and Kashmir 192126
+                    Srinagar, Jammu and Kashmir 192126
                   </div>
                 </div>
               </div>

@@ -9,8 +9,7 @@ const rooms = [
   {
     id: 1,
     title: "Cottage Rooms",
-    price: "₹8,500",
-    image: "/rooms/RCS00085.JPG",
+    image: "/rooms/RCS00087.JPG",
     guests: "2 GUESTS",
     size: "180 Ft²",
     description:
@@ -20,7 +19,6 @@ const rooms = [
   {
     id: 2,
     title: "Premium Suite",
-    price: "₹12,000",
     image: "/rooms/RCS00092.JPG",
     guests: "2 GUESTS",
     size: "240 Ft²",
@@ -36,8 +34,7 @@ const rooms = [
   {
     id: 3,
     title: "Deluxe Room",
-    price: "₹6,500",
-    image: "/rooms/RCS00100.JPG",
+    image: "/rooms/RCS00112.JPG",
     guests: "2 GUESTS",
     size: "180 Ft²",
     description:
@@ -54,7 +51,7 @@ const rooms = [
 export default function RoomsSection() {
   return (
     <section
-      id='rooms'
+      id='Cottage Rooms'
       className='py-20 bg-gradient-to-b from-gray-50 to-white'
     >
       <div className='container mx-auto px-4'>
@@ -67,10 +64,10 @@ export default function RoomsSection() {
           viewport={{ once: true }}
         >
           <h2 className='text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 mb-4'>
-            Our Rooms
+            Our Cottage Rooms
           </h2>
           <p className='text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4'>
-            The 4 star rooms & luxury suites at The Hermitage Pahalgam.
+            The 4 star rooms & luxury suites at The Hermitage Srinagar.
           </p>
         </motion.div>
 
@@ -97,14 +94,6 @@ export default function RoomsSection() {
                   quality={80}
                 />
                 <div className='absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300' />
-                <div className='absolute top-3 right-3 lg:top-4 lg:right-4 bg-white/90 backdrop-blur-sm px-2 py-1.5 lg:px-3 lg:py-2 rounded-full'>
-                  <span className='text-base lg:text-lg font-bold text-gray-900'>
-                    {room.price}
-                  </span>
-                  <span className='text-xs lg:text-sm text-gray-600'>
-                    /night
-                  </span>
-                </div>
               </div>
 
               {/* Room Info */}

@@ -18,7 +18,7 @@ const testimonials = [
     location: "Delhi, India",
     rating: 5,
     comment:
-      "A perfect getaway in Kashmir! The hotel provides world-class amenities and the mountain views are spectacular. Highly recommend for anyone visiting Pahalgam.",
+      "A perfect getaway in Kashmir! The hotel provides world-class amenities and the mountain views are spectacular. Highly recommend for anyone visiting Srinagar.",
   },
   {
     id: 3,
