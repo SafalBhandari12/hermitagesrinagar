@@ -84,6 +84,7 @@ export default function RootLayout({
           src='https://analytics.ahrefs.com/analytics.js'
           data-key='w8H579earfCXm0ZV4hsEyA'
           strategy='afterInteractive'
+          async
         />
 
         {/* Additional SEO Meta Tags */}
