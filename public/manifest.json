@@ -1,0 +1,27 @@
+{
+  "name": "Hermitage Hotels and Resorts",
+  "short_name": "Hermitage Hotels",
+  "description": "Luxury 4-star resort in Srinagar, Kashmir offering world-class hospitality and breathtaking valley views",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#EAB308",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["travel", "hospitality", "hotels"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

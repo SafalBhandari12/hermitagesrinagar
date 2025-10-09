@@ -10,24 +10,28 @@ const slides = [
     image: "/outdoor/RCS00117.JPG",
     title: "Hermitage a luxury experience",
     subtitle: "Exterior View",
+    alt: "Hermitage Hotels and Resorts exterior view showcasing luxury architecture in Srinagar Kashmir",
   },
   {
     id: 2,
     image: "/rooms/RCS00085.JPG",
     title: "Luxury Suite Experience",
     subtitle: "Suite Room",
+    alt: "Luxury suite room at Hermitage Hotels with premium furnishings and valley views",
   },
   {
     id: 3,
     image: "/outdoor/RCS00120.JPG",
     title: "Comfort & Elegance",
     subtitle: "Room View",
+    alt: "Elegant hotel room with modern amenities and comfortable seating area",
   },
   {
     id: 4,
     image: "/outdoor/RCS00145.JPG",
     title: "Breathtaking Views",
     subtitle: "Balcony",
+    alt: "Hotel balcony offering breathtaking views of Kashmir valley and mountains",
   },
 ];
 
@@ -66,6 +70,13 @@ export default function HeroSlider() {
             className='absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full'
             style={{ backgroundImage: `url(${slide.image})` }}
           >
+            {/* Hidden image for SEO */}
+            <img 
+              src={slide.image} 
+              alt={slide.alt} 
+              className="sr-only" 
+              loading={index === 0 ? "eager" : "lazy"}
+            />
             <div className='absolute inset-0 bg-black/40' />
           </div>
 

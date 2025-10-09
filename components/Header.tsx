@@ -43,7 +43,11 @@ export default function Header() {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex justify-between items-center'>
             {/* Logo */}
-            <Link href='/' className='flex-shrink-0'>
+            <Link
+              href='/'
+              className='flex-shrink-0'
+              aria-label='Hermitage Hotels and Resorts - Home'
+            >
               <div className='text-2xl font-bold'>
                 <span
                   className={`font-serif ${
@@ -57,7 +61,11 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className='hidden md:flex space-x-8'>
+            <nav
+              className='hidden md:flex space-x-8'
+              role='navigation'
+              aria-label='Main navigation'
+            >
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -69,7 +77,7 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-            </div>
+            </nav>
 
             {/* Mobile Menu Button */}
             <button
@@ -77,6 +85,8 @@ export default function Header() {
               className={`md:hidden p-2 rounded-md ${
                 isScrolled ? "text-gray-700" : "text-gray-800"
               }`}
+              aria-label='Toggle mobile menu'
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? (
                 <X className='w-6 h-6' />
